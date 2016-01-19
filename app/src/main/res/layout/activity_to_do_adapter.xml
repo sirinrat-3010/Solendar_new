@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView12"
-        android:textSize="@dimen/h1"
+        android:textSize="17sp"
         android:textStyle="bold" />
 
     <TextView
@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView13"
-        android:textSize="25sp"
+        android:textSize="14sp"
         android:textStyle="italic" />
 </LinearLayout>

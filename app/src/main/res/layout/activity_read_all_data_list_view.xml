@@ -9,17 +9,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Do List"
+        android:text="All List"
         android:id="@+id/textView10"
         android:textSize="@dimen/h1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#040101"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="clickBackToDo"
         android:text="Back"
         android:id="@+id/button4"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:background="#d0cec0c7"
         android:layout_alignParentBottom="true" />
 
     <ListView
