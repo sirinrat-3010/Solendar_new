@@ -1,5 +1,7 @@
 package com.example.sirinrat.myapplication;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -82,13 +84,31 @@ public class ShowToDoList extends AppCompatActivity {
 
     }   // createListView
 
-    private void confirmDelete(String strID) {
-        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
-                MODE_PRIVATE, null);
-        objSqLiteDatabase.delete(ManageTABLE.TABLE_TODO, ManageTABLE.DATABASE_id + "=" + Integer.parseInt(strID), null);
-        Toast.makeText(ShowToDoList.this, "Delete OK", Toast.LENGTH_SHORT).show();
-        createListView();
-    }
+    private void confirmDelete(final String strID ) {
+        final AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
+        objBuilder.setIcon(R.drawable.icon_cow);
+        objBuilder.setTitle("Delete");
+        objBuilder.setMessage("คุณต้องการ ลบข้อมูลนี้ใช่หรือไม่ ? ");
+        objBuilder.setCancelable(false);
+        objBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i){
+                SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME,
+                        MODE_PRIVATE, null);
+                objSqLiteDatabase.delete(ManageTABLE.TABLE_TODO, ManageTABLE.DATABASE_id + "=" + Integer.parseInt(strID), null);
+                Toast.makeText(ShowToDoList.this, "Delete OK", Toast.LENGTH_SHORT).show();
+                createListView();
+            }
+    });
+    objBuilder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
+            dialogInterface.dismiss();
+        }
+    });
+    objBuilder.show();
+
+}   // myAlertDialog
 
     private void bindWidget() {
         showDateTextView = (TextView) findViewById(R.id.txtShowDate);
