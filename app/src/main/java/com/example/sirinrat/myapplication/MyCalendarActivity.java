@@ -108,6 +108,10 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
         calendarView.setAdapter(adapter);
     }// Main Method
 
+    public void clickReadAllData(View view) {
+        startActivity(new Intent(MyCalendarActivity.this, ReadAllDataListView.class));
+    }
+
     private void findDateNotification() {
 
         String tag = "masterSolendar";
@@ -594,4 +598,5 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
         objBuilder.show();
 
     }   // myAlertDialog
+
 }

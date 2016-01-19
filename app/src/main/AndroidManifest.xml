@@ -18,7 +18,9 @@
         <activity android:name=".MyCalendarActivity" />
         <activity android:name=".ShowToDoList" />
         <activity android:name=".AddToDoList" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ReadAllDataListView" />
+        <activity android:name=".ToDoAdapter"></activity>
     </application>
 
 </manifest>
