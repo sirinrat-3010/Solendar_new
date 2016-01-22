@@ -75,8 +75,7 @@
         android:layout_height="239dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="0.51">
+        android:layout_weight="0.37">
     </GridView>
 
     <Button
@@ -85,6 +84,7 @@
         android:onClick="clickReadAllData"
         android:text="Read All Data"
         android:id="@+id/button3"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="0dp" />
 
 </LinearLayout>
